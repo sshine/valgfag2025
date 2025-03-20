@@ -1,0 +1,134 @@
+<html>
+
+<body>
+
+  <div id="snake-grid">
+  </div>
+
+  <script>
+    class Grid2D {
+      constructor(rows, cols, defaultValue = null) {
+        this.rows = rows;
+        this.cols = cols;
+        this.grid = Array(rows).fill().map(() => Array(cols).fill(defaultValue));
+        this.drawn = Array(rows).fill().map(() => Array(cols).fill(document.createElement('div')));
+      }
+
+      get(row, col) {
+        return this.grid[row][col];
+      }
+
+      set(row, col, value, callback) {
+        this.grid[row][col] = value;
+        this.drawn[row][col] = callback(value);
+        return true;
+      }
+
+      makeGridElement(row, col) {
+        const cellValue = this.grid[row][col];
+        const cellElement = document.createElement('div');
+
+        // Set cell properties
+        cellElement.id = `grid-${row}-${col}`;
+        cellElement.className = cellClass;
+        cellElement.style.width = '100%';
+        cellElement.style.height = '100%';
+        cellElement.dataset.row = row;
+        cellElement.dataset.col = col;
+
+
+      }
+
+      drawGrid(container, cellRenderer = null, options = {}) {
+        // Default options
+        const {
+          gridClass = 'grid-container',
+          cellClass = 'grid-cell',
+          cellSize = 20
+        } = options;
+
+        // Get container element
+        const containerElement = document.getElementById(container);
+
+        if (!containerElement) {
+          console.error('Container element not found');
+          return;
+        }
+
+        // Clear container
+        containerElement.innerHTML = '';
+
+        // Create grid container
+        const gridElement = document.createElement('div');
+        gridElement.className = gridClass;
+        gridElement.style.display = 'grid';
+        gridElement.style.gridTemplateRows = `repeat(${this.rows}, ${cellSize}px)`;
+        gridElement.style.gridTemplateColumns = `repeat(${this.cols}, ${cellSize}px)`;
+        gridElement.style.gap = '1px';
+
+        // Create cells
+        for (let row = 0; row < this.rows; row++) {
+          for (let col = 0; col < this.cols; col++) {
+            const cellValue = this.grid[row][col];
+            const cellElement = document.createElement('div');
+
+            // Set cell properties
+            cellElement.id = `grid-${row}-${col}`;
+            cellElement.className = cellClass;
+            cellElement.style.width = '100%';
+            cellElement.style.height = '100%';
+            cellElement.dataset.row = row;
+            cellElement.dataset.col = col;
+
+            // Apply custom cell rendering if provided
+            if (cellRenderer && typeof cellRenderer === 'function') {
+              const content = cellRenderer(cellValue, row, col);
+              if (typeof content === 'string') {
+                cellElement.innerHTML = content;
+              } else if (content instanceof HTMLElement) {
+                cellElement.appendChild(content);
+              }
+            } else {
+              // Default rendering
+              cellElement.textContent = cellValue !== null ? cellValue : '';
+            }
+
+            // Add cell to grid
+            gridElement.appendChild(cellElement);
+          }
+        }
+
+        // Add grid to container
+        containerElement.appendChild(gridElement);
+
+        return gridElement;
+      }
+
+      drawSnake(snakeCells) {
+        // TODO: Draw a snake, being an array of [x, y] positions.
+        // A snake is a <div> that contains a '🐍' character.
+        for (const snakeCell of snakeCells) {
+          const [x, y] = snakeCell;
+          this.set(x, y, '🐍');
+        }
+      }
+    }
+
+    const snakeGrid = new Grid2D(10, 40, '');
+    const snake = [[10, 10], [11, 10], [12, 10], [13, 10]];
+    snakeGrid.drawGrid('snake-grid', cell => cell);
+  </script>
+
+  <style>
+    .grid-cell {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+    }
+  </style>
+
+</body>
+
+</html>

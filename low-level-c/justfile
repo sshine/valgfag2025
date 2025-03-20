@@ -1,0 +1,39 @@
+# Huskeliste
+
+list:
+  @just --list
+
+compile:
+  gcc -g -o slides.exe slides.c
+
+xxd:
+  xxd -R always slides | less
+
+objdump:
+  objdump -d slides.exe
+
+cmatrix:
+  nix-shell -p cmatrix --command cmatrix
+
+sl:
+  nix-shell -p sl --command 'sl -aw'
+
+doom:
+  nix-shell -p doomretro --command 'doomretro "./doom/Ultimate Doom/DOOM.WAD"'
+
+demo:
+  @echo https://xkcd.com/710/
+  @read
+  @vim -p Collatz.java collatz.c
+
+  javac Collatz.java
+  gcc -o collatz.exe collatz.c -O3
+  @read
+
+  java Collatz
+  @read
+  ./collatz.exe
+  @read
+
+clean:
+  rm -f *.o *.exe *.class

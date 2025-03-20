@@ -1,0 +1,36 @@
+<script>
+    const images = [
+        'bubble_sort.gif',
+        'merge_sort.gif',
+        'quick_sort_hoare.gif',
+        'tim_sort.gif',
+        'heap_sort.gif',
+        'insertion_sort.gif',
+        'selection_sort.gif',
+    ];
+
+    let counter = 0;
+    function reveal() {
+        let next = document.createElement('img');
+        next.style.width = '25%';
+        next.src = images[counter];
+
+        document.getElementById('algos').appendChild(next);
+        counter += 1;
+    }
+
+</script>
+
+<button onclick="reveal()">+</button>
+
+<div id="algos"></div>
+
+<!--
+<img src="bubble_sort.gif" style="width: 25%">
+<img src="heap_sort.gif" style="width: 25%">
+<img src="insertion_sort.gif" style="width: 25%">
+<img src="merge_sort.gif" style="width: 25%">
+<img src="quick_sort_hoare.gif" style="width: 25%">
+<img src="selection_sort.gif" style="width: 25%">
+<img src="tim_sort.gif" style="width: 25%">
+-->

@@ -1,0 +1,101 @@
+<html>
+<body>
+
+<h2>Grådig algoritme</h2>
+
+Byttepenge i alt: <input type="text" id="amount" value="99">
+Mønter: <input type="text" id="coins" value="1, 2, 5, 10, 20">
+<button onclick="animateChange('amount', 'coins', 'change')">Beregn mønter!</button>
+<span id="change"></span>
+
+<p>
+
+Byttepenge i alt: <input type="text" id="amount2" value="13">
+Mønter: <input type="text" id="coins2" value="2, 5">
+<button onclick="animateChange('amount2', 'coins2', 'change2')">Beregn mønter!</button>
+<span id="change2"></span>
+
+<p>
+
+<pre>
+function makeChange(amount, coins) {
+  // Sort coins in descending order (largest to smallest)
+  const sortedCoins = [...coins].sort((a, b) =&gt; b - a);
+
+  // Initialize result array to store the coins used
+  const result = [];
+  let remainingAmount = amount;
+
+  // Use as many of each coin as possible, from high to low
+  for (const coin of sortedCoins) {
+    while (remainingAmount &gt;= coin) {
+      result.push(coin);
+      remainingAmount -= coin;
+    }
+  }
+
+  return result;
+}
+</pre>
+
+
+<script>
+function makeChange(amount, coins) {
+  // Sort coins in descending order (largest to smallest)
+  const sortedCoins = [...coins].sort((a, b) => b - a);
+
+  // Initialize result array to store the coins used
+  const result = [];
+  let remainingAmount = amount;
+
+  // Use as many of each coin as possible, from high to low
+  for (const coin of sortedCoins) {
+    while (remainingAmount >= coin) {
+      result.push(coin);
+      remainingAmount -= coin;
+    }
+  }
+
+  return result;
+}
+
+function animateChange(amountId, coinsId, changeId) {
+  const amount = document.getElementById(amountId).value;
+  const coins = document.getElementById(coinsId)
+    .value
+    .split(',')
+    .map(coin => Number(coin.trim()));
+
+  const change = makeChange(amount, coins);
+ document.getElementById(changeId).innerHTML = change.join(', ');
+}
+
+</script>
+
+<style>
+body {
+  color: white;
+}
+
+#amount, #coins, #amount2, #coins2 {
+  text-align: center;
+  border: 2px solid black;
+  padding: 0.5em;
+}
+
+#amount, #amount2 {
+  width: 4em;
+}
+
+#coins, #coins2 {
+ 
+}
+
+#change, #change2 {
+}
+</style>
+
+<script src="prism.min.js" manual></script>
+
+</body>
+</html>

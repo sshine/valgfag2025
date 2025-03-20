@@ -1,0 +1,192 @@
+<html>
+
+<style>
+    body {
+        background: #711c91;
+        color: #0abdc6;
+        font: monospace;
+    }
+
+    button {
+        background: #133e7c;
+        color: #0abdc6;
+        border: 2px solid #ea00d9;
+        padding: 0.5em 1em;
+        margin: 0 1em;
+        font-size: 20pt;
+    }
+
+    h2,
+    p,
+    li {
+        font-size: 150%;
+    }
+
+    iframe {
+        width: 100%;
+        height: 50%;
+    }
+</style>
+
+<body>
+    <div id="slides">
+        <h1># {{ title }}</h1>
+        <button @click="prev">&laquo;</button>
+        <button @click="next">&raquo;</button>
+        <div v-html="slides[currentSlide]"></div>
+    </div>
+    <script src="vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    title: 'Datastrukturer og algoritmer sat i spil',
+                    currentSlide: 0,
+                    slides: [
+                        // Slide 1
+                        `
+                            <h2>## Hvad er en datastruktur?</h2>
+                            <p>En datastruktur er en måde at organisere og gemme data i en computer,
+                            så den kan bruges effektivt og tilgås på en hensigtsmæssig måde.</p>
+
+                            <p>Eksempler: Arrays, HashMaps, ArrayLists, Linkede lister, stakke, køer</p>
+                        `,
+
+                        // Slide 2
+                        `
+                            <h2>## Hvad er en algoritme?</h2>
+
+                            <p>En algoritme er en sekvens af veldefinerede instruktioner, der beskriver
+                            hvordan et problem løses, eller en opgave udføres gennem et endeligt antal
+                            trin. En algoritme er en opskrift.</p>
+
+                            <p>Eksempler på problemer som der findes algoritmer til:</p>
+
+                            <ul>
+                                <li>Søgning efter et element i en container
+                                <li>Sortering af elementer i en container
+                                <li>Finde vej igennem en labyrint
+                                <li>Give korrekte byttepenge
+                            </ul>
+                        `,
+
+                        `
+                        <h2>## Eksempel på algoritme: Give korrekte byttepenge</h2>
+
+                        <iframe src="coinChange.html"></iframe>
+                        `,
+
+                        `
+                            <h2>## Hvad er en god algoritme?</h2>
+
+                            <p>Vigtigst:<p>
+
+                            <ul>
+                                <li>Korrekt
+                                <li>Effektiv
+                                <li>Forståelig
+                            </ul>
+
+                            <p>Men også vigtigt:</p>
+
+                            <ul>
+                                <li>Endelig: Algoritmen stopper faktisk hver gang
+                                <li>Deterministisk: Algoritmen gør det samme hver gang
+                                <li>Generel: Løser flere instanser af samme slags problem
+                            </ul>
+                        `,
+
+                        `
+                            <h2>## Hvordan måler man om en algoritme er hurtig?</h2>
+
+                            <ul>
+                                <li>Man kan starte et ur, udføre algoritmen, og stoppe uret igen.
+                                <li>Man kan tælle antal trin algoritmen bruger, for et specifikt input.
+                                <li>Man kan tælle antal trin algoritmen bruger, for et variabelt input.
+                            </ul>
+                            
+                            <div style="text-align: center">
+                                <img src="bigo.jpg" style="width: 25%">
+                            </div>
+                        `,
+
+                        `
+                            <h2>## Eksempel på visualisering: Sortering</h2>
+                        
+                            <iframe src="sorting.html"></iframe>
+                        `,
+
+                        `
+                            <h2>## Hvorfor lære om datastrukturer og algoritmer?</h2>
+
+                            <ul>
+                                <li>Det er noget man kan bruge i alle programmeringssprog.
+                                <li>De afgør om programmer kører hurtigt eller langsomt.
+                                <li>Kendskab til datastrukturer og algoritmer gør jer til bedre programmører.
+                                <li>Man behøver ikke være ekspert i algoritmer for at huske at bruge et HashMap.
+                            </ul>
+                        `,
+                        `
+                            <h2>## Eksempel på visualisering: Snake</h2>
+                            
+                            <img src="snake_game.gif" style="width: 100%">
+                        
+                            <!-- <iframe src="snake.html"></iframe> -->
+                        `,
+
+
+                        `
+                            <h2>## Hvad lærer vi om?</h2>
+
+                            <p>Vi lærer om...</p>
+
+                            <ul>
+                                <li>de mest udbredte datastrukturer, man kan bruge i al programmering
+                                <li>tidskompleksitet (store-O notation): en måde at sige hvor effektiv en algoritme er
+                                <li>klassiske algoritme-problemer og strategier som søgning, sortering, del-og-hersk
+                                <li>algoritmer til spil: kollision, stifinding, strategier
+                            </ul>
+                        `,
+
+                        `
+                            <h2>## Hvilke færdigheder får vi?</h2>
+
+                            <p>Vi kan...</p>
+
+                            <ul>
+                                <li>bruge de indbyggede datatyper i Java og JavaScript meget bedre
+                                <li>bruge de indbyggede algoritmer i Java og JavaScript til at søge og sortere
+                                <li>lave vores egne datatyper
+                                <li>lave små spil og visualiseringer af datastrukturer og algoritmer
+                            </ul>
+                        `,
+
+                        `
+                            <h2>## Hvilke kompetencer får vi?</h2>
+
+                            <p>Vi kan...
+
+                            <ul>
+                                <li>udvælge datastrukturer og algoritmer til at løse komplekse problemstillinger
+                                <li>optimere valget af datastrukturer og algoritmer baseret på krav til performance
+                                <li>håndtere algoritmer der er procedurale, rekursive eller event-baserede
+                            </ul>
+                        `,
+                    ]
+                }
+            },
+            methods: {
+                prev() {
+                    this.currentSlide -= 1
+                },
+                next() {
+                    this.currentSlide += 1
+                },
+            }
+        }).mount('#slides')
+    </script>
+</body>
+
+</html>

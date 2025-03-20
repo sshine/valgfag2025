@@ -75,3 +75,13 @@ Rust er et meget sjovere programmeringssprog.
 Men det er også ret svært at lære på kort tid.
 
 Og faktisk så er Rust meget lettere at lære, hvis man kan programmere C, fordi Rust er lavet som en "bedre version af C". Det er altså de problemer som opstår i C, som danner grundlaget for Rust's eksistens.
+
+### Hvad synes du om brugen af ChatGPT til programmering i C?
+
+Min (Simon's) grundholdning er, at brugen af LLM'er ikke er snyd.
+
+Datamatiker-uddannelsens AI-politik dækker kun de første tre semestre, hvor man mener at den studerende skal tage LLM'er gradvist mere i brug som man bliver bedre til at programmere. Men hvad man skal gøre på fjerde semester kommer meget an på valgfaget.
+
+Når det gælder C-programmering har jeg ikke selv prøvet at få AI-hjælp. Men jeg har brugt det en del til Rust, og der virker det okay så længe man kun spørger om begrænsede ting. Mange af valgfagets opgaver kan løses trivielt ved at indtaste opgavebeskrivelsen. Derfor er det ret vigtigt at man ikke springer hele opgaven over. Jeg vil derfor anbefale, at man bruger LLM'er til at hjælpe én med at forstå hvorfor noget ikke virker: Altså som et værktøj til at hjælpe læring, og ikke et værktøj til at springe læring over. Husk: I er her ikke for at blive færdige med en række opgaver. I er her for at lære noget. :-D
+
+Da eksamen har 20 minutters forberedelse, er det et godt spørgsmål hvordan ChatGPT kommer ind i billedet. Det vil jeg betragte som et socialt eksperiment, som valgfagets deltagere skal hjælpe med at afklare. Det fremgår nemlig ikke af valgfagets studieordnings-beskrivelse om LLM'er er tilladt til eksamen.

@@ -68,6 +68,12 @@ Men det er de samme problemstillinger, der opstår når man laver almindelige ap
 
 Tænk derfor ikke "Jeg har ingen interesse i computerspil, så derfor er datastrukturer og algoritmer ikke noget for mig."
 
+### Hvad synes du om brug af ChatGPT til datastrukturer og algoritmer?
+
+Min (Simon's) grundholdning er, at brugen af LLM'er ikke er snyd.
+
+Valgfaget her forsøger at overkomme brugen af LLM'er ved at fokusere på visualisering af algoritmer, i stedet for at implementere en eller anden algoritme for 10.000'te gang. Man kan også få hjælp af ChatGPT til at visualisere en algoritme. Men det er sværere, og er egentlig en okay øvelse i at bruge LLM'er bedre. Men du vil opleve, at når man beder den lave noget, som der ikke findes en hel masse af, ender man nemt med at spilde en masse tid på at spørge om én ting, og få svar på noget andet.
+
 ### Er det et svært fag? Er der meget matematik?
 
 Ja, det er lidt svært.

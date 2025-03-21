@@ -38,7 +38,7 @@ Nogle af dem vil blive genbrugt, og andre er nye, men har samme omfang i sværhe
 
 Det er kun C, og ikke C++.
 
-C er et meget lille sprog sammenlignet med C++, og er betydeligt nemmere at lære på et semester. Når man kan C, har man gode forudsætninger for at lære C++ senere, da den grundlæggende forståelse bygger ovenpå.
+C er et meget lille sprog sammenlignet med C++, og er betydeligt nemmere at lære på et semester. Når man kan C, har man gode forudsætninger for at lære C++ (eller Rust!) senere, da den grundlæggende forståelse bygger ovenpå.
 
 ### Er C godt at kombinere med andre valgfag?
 

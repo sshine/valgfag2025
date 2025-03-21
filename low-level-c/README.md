@@ -32,6 +32,8 @@ Jeg kan give nogle eksempler på tidligere opgaver:
 - Opbygning af din egen String-datatype
 - Bygge logikken til et lyskryds
 
+Nogle af dem vil blive genbrugt, og andre er nye, men har samme omfang i sværhedsgrad.
+
 ### Er det C eller C++ vi lærer?
 
 Det er kun C, og ikke C++.

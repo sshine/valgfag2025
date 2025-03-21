@@ -2,7 +2,7 @@
 
 Se kursusbeskrivelsen på [katalog.kea.dk][katalog].
 
-Se slideshow-programmet, [slides.c](./slides.c).
+Se slideshow-programmet, [slides.c](./slides.c) og selve slides'ene, [slides.md](./slides.md).
 
 [katalog]: https://katalog.kea.dk/course/3050456/2024-2025
 

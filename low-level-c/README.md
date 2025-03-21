@@ -14,7 +14,9 @@ Hvis dit spørgsmål ikke er besvaret nedenfor, så send en mail til sish@kea.dk
 
 Mindst fem afleveringsopgaver skal være afleveret.
 
-20 minutters individuel mundtlig eksamen, med 20 minutters forberedelse. Der trækkes et emne, og forberedes et oplæg eller en løsning, som præsenteres mundtligt.
+20 minutters individuel mundtlig eksamen, med 20 minutters forberedelse.
+
+Der trækkes et emne, og forberedes et oplæg eller en løsning, som præsenteres mundtligt.
 
 Til eksamen kan opgaven være at tale om et teoretisk oplæg, beskrivelse af eksisterende kode, eller udvikling af et lille program.
 
